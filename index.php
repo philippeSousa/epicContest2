@@ -4,6 +4,7 @@ error_reporting(E_ALL);
 	ini_set("display_errors", 1);
 	require_once 'vendor/autoload.php';
     require_once 'utils/DbConnect.php';
+    require_once 'utils/functions.php';
 /*    require 'utils/functions.php';
 */
 	use Facebook\FacebookSession;
@@ -22,7 +23,7 @@ error_reporting(E_ALL);
   const mdp = "5598726dd2d32c30ca7e11b7eeb68016";
   
   FacebookSession::setDefaultApplication(id, mdp);
-$redirectLoginUrl = "http://localhost/facebook/epicContest/index.php";
+$redirectLoginUrl = "https://appesgifacebook.herokuapp.com/";
 
   $helper = new FacebookRedirectLoginHelper($redirectLoginUrl);
   if (isset($_SESSION) && isset($_SESSION['fb_token'])) {

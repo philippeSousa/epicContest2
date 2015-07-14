@@ -15,7 +15,7 @@
     $graphObject = null;
     $albums = null;
 
-$redirectLoginUrl = "http://localhost/facebook/epicContest/index.php?uc=selectAlbum";
+$redirectLoginUrl = "https://appesgifacebook.herokuapp.com/index.php?uc=selectAlbum";
 
 $request = new FacebookRequest(
 				$session,

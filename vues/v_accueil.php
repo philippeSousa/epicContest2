@@ -81,22 +81,6 @@
 	</div>
 </div>
 
-
-
-
-
-
-				<!-- <div id="portfoliolist">
-					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">
-							<a href="web/images/img13.jpg" class=" mask b-link-stripe b-animate-go   swipebox"  title="Image Title">
-								<img src="web/images/chat.png" alt="" class="img-responsive zoom-img"/>
-							</a>
-						</div>	
-					</div>				
-							
-					<div class="clearfix"> </div>
-				</div>	 -->
 				
 			<!--swipebox -->	
 			<link rel="stylesheet" href="css/swipebox.css">
