@@ -8,11 +8,11 @@ function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
     var_dump($userId);
     var_dump($urlPhoto);
     var_dump($urlMiniaturer);
-/*    $sth = $conn->prepare('INSERT INTO photos (id_photo, id_user,nb_like, url_photo, url_miniature, date_submit) 
-        VALUES(:id_photo,:id_user,:nb_like, ":url_photo", :url_miniature, :date_submit)');*/
-     $sth = $conn-> prepare('INSERT INTO photos SET id_photo = :id_photo, 
+    $sth = $conn->prepare('INSERT INTO photos (id_photo, id_user,nb_like, url_photo, url_miniature, date_submit) 
+        VALUES(:id_photo,:id_user,:nb_like,:url_photo, :url_miniature, :date_submit)');
+  /*   $sth = $conn->prepare('INSERT INTO photos SET id_photo = :id_photo, 
       id_user = :id_user, nb_like = :nb_like, url_photo = :url_photo,
-       url_miniature = :url_miniature, date_submit = :date_submit');
+       url_miniature = :url_miniature, date_submit = :date_submit');*/
     $sth->bindParam(':id_photo', $idPhoto);
     $sth->bindParam(':id_user', $userId);
     $sth->bindParam(':nb_like', $nbLike);
