@@ -51,8 +51,8 @@
 		);
 		$responsePhotos = $requestPhotos->execute();
 		$photos = json_decode($responsePhotos->getRawResponse(), true);
-		var_dump($photos);
-	
+/*		var_dump($photos);
+*/	
 	} else {
 		/* S'il est pas connecté, il a pas accès à la page d'upload,
 		 *  on le redirige vers l'accueil */

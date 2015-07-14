@@ -4,12 +4,13 @@ function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
 {
     $nbLike = 0 ;
     $date = date('Ymd');
+    $active = 1;
     var_dump($idPhoto);
     var_dump($userId);
     var_dump($urlPhoto);
     var_dump($urlMiniaturer);
-    $sth = $conn->prepare('INSERT INTO photos (id_photo, id_user,nb_like, url_photo, url_miniature, date_submit) 
-        VALUES(:id_photo,:id_user,:nb_like,:url_photo, :url_miniature, :date_submit)');
+    $sth = $conn->prepare('INSERT INTO photos (id_photo, id_user,nb_like, url_photo, url_miniature, date_submit,active) 
+        VALUES(:id_photo,:id_user,:nb_like,:url_photo, :url_miniature, :date_submit, :active)');
   /*   $sth = $conn->prepare('INSERT INTO photos SET id_photo = :id_photo, 
       id_user = :id_user, nb_like = :nb_like, url_photo = :url_photo,
        url_miniature = :url_miniature, date_submit = :date_submit');*/
@@ -19,6 +20,7 @@ function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
     $sth->bindParam(':url_photo', $urlPhoto);
     $sth->bindParam(':url_miniature', $urlMiniature);
     $sth->bindParam(':date_submit', $date);
+    $sth->bindParam(':active', $active);
 
     return $sth->execute();
 }
@@ -97,3 +99,28 @@ function insertUser($userId,$conn)
     $sth->bindParam(':date_submit', $date);
     return $sth->execute();
 }
+//recupere list de photo grace a une periode donnée et un quantité de photo voulu
+
+function getPhotoByDate($datePeriode,$nb){
+
+ $list = [];
+$mois = date("m", strtotime($datePeriode));
+$annee = date("Y", strtotime($datePeriode));
+
+var_dump($mois);
+var_dump($annee);
+
+     $sth = $conn->prepare('SELECT id_photo,id_user,nb_like,url_photo,url_miniature,date_submit,active FROM photos 
+        where Mouth(date_submit) = :mois and YEAR(date_submit) = :annee and active = 1
+     ORDER BY date_submit');
+    $sth->execute([':annee' => $datePeriode , ':mois' => ]);
+    while ($donnees = $sth->fetch())
+      {
+            $list[] = $donnees;
+            var_dump($list);
+      }
+
+    return $list;
+
+}
+

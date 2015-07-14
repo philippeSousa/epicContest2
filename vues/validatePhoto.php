@@ -26,8 +26,8 @@
 		$response = $request->execute();
 		//transform la data graphObject
 		$user = $response->getGraphObject("Facebook\GraphUser");
-		var_dump($user);
-		/* Get les photos de l'album */	
+/*		var_dump($user);
+*/		/* Get les photos de l'album */	
 		/* envoie une requete fcb qui va chercher toutes les photo de l'albumId selectionné */
 		$requestPhoto = new FacebookRequest(
 		  $session,
@@ -36,8 +36,8 @@
 		);
 		$responsePhoto = $requestPhoto->execute();
 		$photo = json_decode($responsePhoto->getRawResponse(), true);
-		var_dump($photo);
-	} else {
+/*		var_dump($photo);
+*/	} else {
 		/* S'il est pas connecté, il a pas accès à la page d'upload, on le redirige vers l'accueil */
         header('Location: index.php');		
 	}

@@ -40,6 +40,9 @@
 	<div class="row">
 	<div class="img-title">
 						<h4>DERNIER AJOUT</h4>
+
+
+			
 					</div>
 
 			<div class="clearfix"> </div>
