@@ -5,7 +5,7 @@ function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
 
     $sth = $conn->prepare('INSERT INTO photos (id_photo, id_user,nb_like, url_photo, url_miniature, date_submit) VALUES(:id_photo,:id_user,:nb_like, ":photo", ":miniature", :date)');
     $sth->bindParam(':id_photo', $idPhoto);
-    $sth->bindParam(':id_user', $userId)
+    $sth->bindParam(':id_user', $userId);
     $sth->bindParam(':nb_like', 0);
     $sth->bindParam(':photo', $urlPhoto);
     $sth->bindParam(':miniature', $urlMiniature);
