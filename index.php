@@ -80,7 +80,9 @@ switch($uc)
 	case 'accueil':
 	{ 
 		$date = date('Ymd');
+
 		$listRecent = getPhotoByDate($date,0);
+		var_dump($listRecent);
 		include('vues/v_accueil.php');
 		break;
 	}
