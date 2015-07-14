@@ -1,0 +1,8 @@
+{
+  "require" : {
+    "facebook/php-sdk-v4" : "4.0.*",
+    "ext-mbstring": "*",
+    "monolog/monolog": "~1.9",
+    "gargron/fileupload": "1.0.2"
+  }
+}
