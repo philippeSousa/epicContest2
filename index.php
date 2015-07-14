@@ -81,7 +81,7 @@ switch($uc)
 	{ 
 		$date = date('Ymd');
 
-		$listRecent = getPhotoByDate($date,0);
+		$listRecent = getPhotoByDate($date,0,$conn);
 		var_dump($listRecent);
 		include('vues/v_accueil.php');
 		break;

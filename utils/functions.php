@@ -101,7 +101,7 @@ function insertUser($userId,$conn)
 }
 //recupere list de photo grace a une periode donnée et un quantité de photo voulu
 
-function getPhotoByDate($datePeriode,$nb){
+function getPhotoByDate($datePeriode,$nb,$conn){
 
  $list = [];
 $mois = date("m", strtotime($datePeriode));
