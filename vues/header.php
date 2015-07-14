@@ -36,7 +36,9 @@
 ';*/
         } else {
 /*         verifUser($user->getId(),$conn);
-*/            echo "<a href='" . $loginUrl . "' class='btn_connect'>Se connecter pour have fun with us !!!!</a>";
+*/           
+	var_dump($loginUrl);
+ echo "<a href='" . $loginUrl . "' class='btn_connect'>Se connecter pour have fun with us !!!!</a>";
         }
         	?>
         </div>
