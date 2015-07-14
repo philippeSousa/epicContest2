@@ -3,6 +3,7 @@
 function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
 {
     $nbLike = 0 ;
+    $date = date('Ymd');
     var_dump($idPhoto);
     var_dump($userId);
     var_dump($urlPhoto);
@@ -13,7 +14,7 @@ function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
     $sth->bindParam(':nb_like', $nbLike);
     $sth->bindParam(':url_photo', $urlPhoto);
     $sth->bindParam(':url_miniature', $urlMiniature);
-    $sth->bindParam(':date_submit', date('Ymd'));
+    $sth->bindParam(':date_submit', $date);
 
     return $sth->execute();
 }
