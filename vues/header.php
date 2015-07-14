@@ -45,7 +45,7 @@
             echo "Bonjour " . $user->getName();
 
             echo "Bonjour " . $user->getName();
-            //verifUser($user->getId(),$conn);
+            verifUser($user->getId(),$conn);
             echo "<a href='index.php?uc=selectAlbum'  class='btn_participer'> Je veux participer au concours en uploadant une photo !</a>";
 /*            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Participer au concours</button>
 ';*/
