@@ -54,6 +54,7 @@ $redirectLoginUrl = "https://appesgifacebook.herokuapp.com/";
 
       
   } else {
+  	echo "eddddd";
       // show login url
       $loginUrl = $helper->getLoginUrl(['user_photos']);
 /*      var_dump($loginUrl);
