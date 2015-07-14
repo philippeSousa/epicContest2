@@ -32,7 +32,7 @@ $redirectLoginUrl = "https://appesgifacebook.herokuapp.com/";
       $session = $helper->getSessionFromRedirect();
   }
 
-            include 'vues/header.php';
+           
      ?>
 
      <?php
@@ -59,7 +59,7 @@ $redirectLoginUrl = "https://appesgifacebook.herokuapp.com/";
       $loginUrl = $helper->getLoginUrl(['user_photos']);
 /*      var_dump($loginUrl);
 */  }
-
+ include 'vues/header.php';
  ?>
 
 
