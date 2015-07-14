@@ -36,7 +36,7 @@
 		);
 		$responsePhoto = $requestPhoto->execute();
 		$photo = json_decode($responsePhoto->getRawResponse(), true);
-	
+		var_dump($photo);
 	} else {
 		/* S'il est pas connecté, il a pas accès à la page d'upload, on le redirige vers l'accueil */
         header('Location: index.php');		
