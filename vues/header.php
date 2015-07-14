@@ -1,4 +1,19 @@
 <!--header-->
+<?php 	error_reporting(E_ALL);
+
+
+	use Facebook\FacebookSession;
+	use Facebook\FacebookRedirectLoginHelper;
+	use Facebook\FacebookRequest;
+	use Facebook\FacebookResponse;
+	use Facebook\FacebookSDKException;
+	use Facebook\FacebookRequestException;
+	use Facebook\FacebookAuthorizationException;
+	use Facebook\GraphObject;
+	use Facebook\Entities\AccessToken;
+	use Facebook\HttpClients\FacebookCurlHttpClient;
+	use Facebook\HttpClients\FacebookHttpable;
+	?>
 	<div class="header">
 		<div class="social-icons">
 				<ul>
