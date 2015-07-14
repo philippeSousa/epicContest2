@@ -111,7 +111,7 @@ var_dump($mois);
 var_dump($annee);
 
      $sth = $conn->prepare('SELECT id_photo,id_user,nb_like,url_photo,url_miniature,date_submit,active FROM photos 
-        where Mouth(date_submit) = :mois and YEAR(date_submit) = :annee and active = 1
+        where MOUNTH(date_submit) = :mois and YEAR(date_submit) = :annee and active = 1
      ORDER BY date_submit');
     $sth->execute([':annee' => $annee , ':mois' =>$mois ]);
     while ($donnees = $sth->fetch())
