@@ -67,8 +67,8 @@
 */    $urlPhoto = $photo["images"][0]["source"];
 /*    echo " url phot".$urlPhoto;
 */
-/*    insertPhotos($photoId,$userId, $urlPhoto, $urlMiniature,$conn);
-*/
+    insertPhotos($photoId,$userId, $urlPhoto, $urlMiniature,$conn);
+
 
 echo '----------------------------';
 

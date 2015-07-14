@@ -22,6 +22,7 @@ $request = new FacebookRequest(
 				'GET',
 				'/me/permissions'
 		);
+
 		$responsePermissions = $request->execute();
 /*		var_dump($responsePermissions);
 */		$lesPermissions = json_decode($responsePermissions->getRawResponse(), true);
@@ -90,10 +91,7 @@ $request = new FacebookRequest(
 
 
 		    	<?php } ?>   	
-<!-- 		<div class="col-xs-14 col-sm-3"> <img src="images/chat.png"/></div>
-		<div class="col-xs-14 col-sm-3"> <img src="images/chat.png"/></div>
-		<div class="col-xs-14 col-sm-3"> <img src="images/chat.png"/></div>
-		<div class="col-xs-14 col-sm-3"> <img src="images/chat.png"/></div> -->
+
 	</div>
 	</div>
 
