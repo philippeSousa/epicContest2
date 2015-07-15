@@ -58,7 +58,7 @@ for ($i=0; $i < count($listRecentPhotos) ; $i++) { ?>
                 <div class="info"> <span class="badge">90</span>
  				<span class="badge">42</span>
  				</div>
-                <div class="fb-like" data-href="https://appesgifacebook.herokuapp.com/<?php echo $listRecentPhotos[$i]['id_user']?>/<?php echo $listRecentPhotos[$i]['id_photo'] ?>/<?php echo $listRecentPhotos[$i]['date_submit']?>" data-send="true" 
+                <div class="fb-like" data-href="https://appesgifacebook.herokuapp.com/index.php?uc=photo&iduser=<?php echo $listRecentPhotos[$i]['id_user']?>&idphoto<?php echo $listRecentPhotos[$i]['id_photo'] ?>&date<?php echo $listRecentPhotos[$i]['date_submit']?>" data-send="true" 
                 data-layout="box_count" data-width="100" data-show-faces="true" data-font="arial"></div>
                 </div>
    </div>

@@ -85,6 +85,14 @@ switch($uc)
 		include('vues/v_accueil.php');
 		break;
 	}
+	case 'photo':
+	{ 
+		$idPhoto = $_GET['idphoto'];
+		$idUser = $_GET['idusers'];
+		$date = $_GET['date'];
+		include('vues/photo.php');
+		break;
+	}
 	case 'selectAlbum':
 	{
 		require 'vues/selectAlbum.php';
@@ -93,16 +101,20 @@ switch($uc)
 	case 'getPhotoAlbum':
 	{	
 		$idAlbum = $_GET['albumId'];
-/*		var_dump($idAlbum);
-*/		include('vues/listPhotoAlbum.php');
+		include('vues/listPhotoAlbum.php');
 		break;
 	}
 	case 'validatePhoto': {
 
-/*		var_dump($_POST);
-*/		include('vues/validatePhoto.php');
-/*		echo "dddd";
-*/	}
+	include('vues/validatePhoto.php');
+	break;
+	}
+	default :
+	{
+		$date = date('Ymd');
+		$listRecentPhotos = getPhotoByDate($date,0,$conn);
+		include('vues/v_accueil.php');
+	}
 }
 ?>
 

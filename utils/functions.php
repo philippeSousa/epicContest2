@@ -133,7 +133,7 @@ function getPhotoByDate($datePeriode,$nb,$conn){
 $mois = date("m", strtotime($datePeriode));
 $annee = date("Y", strtotime($datePeriode));
 
-     $sth = $conn->prepare('SELECT id_photo,id_user,nb_like,url_photo,url_miniature,date_submit,active 
+     $sth = $conn->prepare('SELECT id,id_photo,id_user,nb_like,url_photo,url_miniature,date_submit,active 
         FROM photos where extract(month FROM date_submit) = :mois 
         and extract(YEAR FROM date_submit) = :annee ORDER BY date_submit
 ');
