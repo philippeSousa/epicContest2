@@ -88,7 +88,7 @@ switch($uc)
 	case 'photo':
 	{ 
 		$idPhoto = $_GET['idphoto'];
-		$idUser = $_GET['idusers'];
+		$idUser = $_GET['iduser'];
 		$date = $_GET['date'];
 		include('vues/photo.php');
 		break;

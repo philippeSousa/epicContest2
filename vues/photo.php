@@ -16,7 +16,6 @@
 	{		 
 		/* Init la connection et get le USER */
 		$token = (string) $session->getAccessToken();
-		$_SESSION['fb_token'] = $token;
 		//Prepare
 		$request = new FacebookRequest($session, 'GET', '/me');
 		//execute
