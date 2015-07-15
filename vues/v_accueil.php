@@ -53,7 +53,7 @@
 for ($i=0; $i < count($listRecentPhotos) ; $i++) { ?>
 
 <div class="col-xs-14 col-sm-3"> <div class="well">
-            		<h4><a href="#" target="_blank">Bootstrap</a></h4>
+            		<h4><a href="#" target="_blank"><!-- Bootstrap --></a></h4>
                 <img class="thumbnail img-responsive img-responsive zoom-img" src="<?php echo $listRecentPhotos[$i]['url_photo'] ;?>"/>
                 <div class="info"> <span class="badge">90</span>
  				<span class="badge">42</span>
@@ -62,10 +62,6 @@ for ($i=0; $i < count($listRecentPhotos) ; $i++) { ?>
    </div>
  <?php } 
 ?>
-
-
-
-<?php }?>
 		
 
 
