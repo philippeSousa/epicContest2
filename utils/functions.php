@@ -7,7 +7,7 @@ function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
     $active = 1;
     $q = false;
 
-if( verifPhoto($idPhoto,$userId,$date) ) {
+if( verifPhoto($idPhoto,$userId,$date,$conn) ) {
     $sth = $conn->prepare('INSERT INTO photos (id_photo, id_user,nb_like, url_photo, url_miniature, date_submit,active) 
         VALUES(:id_photo,:id_user,:nb_like,:url_photo, :url_miniature, :date_submit, :active)');
   /*   $sth = $conn->prepare('INSERT INTO photos SET id_photo = :id_photo, 
@@ -26,7 +26,7 @@ if( verifPhoto($idPhoto,$userId,$date) ) {
 
 }
 
-function verifPhoto($idPhoto,$idUser,$date){
+function verifPhoto($idPhoto,$idUser,$date,$conn){
 
 $mois = date("m", strtotime($date));
 $annee = date("Y", strtotime($date));
