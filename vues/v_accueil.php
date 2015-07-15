@@ -49,7 +49,7 @@
 
 
 <?php 
-
+var_dump($listRecentPhotos);
 for ($i=0; $i < count($listRecentPhotos) ; $i++) { ?>
 
 <div class="col-xs-14 col-sm-3"> <div class="well">
@@ -59,6 +59,8 @@ for ($i=0; $i < count($listRecentPhotos) ; $i++) { ?>
  				<span class="badge">42</span>
  				</div>
                 </div>
+                <div class="fb-like" data-href="https://appesgifacebook.herokuapp.com/<?php echo $listRecentPhotos[$i]['url_photo']?>/<?php echo $listRecentPhotos[$i]['url_photo'] ?>/<?php echo $listRecentPhotos[$i]['url_photo']?>" data-send="true" 
+                data-layout="box_count" data-width="100" data-show-faces="true" data-font="arial"></div>
    </div>
  <?php } 
 ?>
