@@ -5,10 +5,9 @@ function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
     $nbLike = 0 ;
     $date = date('Ymd');
     $active = 1;
-    var_dump($idPhoto);
-    var_dump($userId);
-    var_dump($urlPhoto);
-    var_dump($urlMiniaturer);
+    $q = false;
+
+if( verifPhoto($idPhoto,$userId,$date) ) {
     $sth = $conn->prepare('INSERT INTO photos (id_photo, id_user,nb_like, url_photo, url_miniature, date_submit,active) 
         VALUES(:id_photo,:id_user,:nb_like,:url_photo, :url_miniature, :date_submit, :active)');
   /*   $sth = $conn->prepare('INSERT INTO photos SET id_photo = :id_photo, 
@@ -21,8 +20,34 @@ function insertPhotos($idPhoto, $userId, $urlPhoto, $urlMiniature, $conn)
     $sth->bindParam(':url_miniature', $urlMiniature);
     $sth->bindParam(':date_submit', $date);
     $sth->bindParam(':active', $active);
+    $q = $sth->execute();
+}
+    return $q;
 
-    return $sth->execute();
+}
+
+function verifPhoto($idPhoto,$idUser,$date){
+
+$mois = date("m", strtotime($date));
+$annee = date("Y", strtotime($date));
+
+$bool = false;
+
+    $sth = $conn->prepare('SELECT * FROM photos where id_user = :id_user AND id_photo = :id_photo 
+        AND extract(month FROM date_submit) = :mois 
+        and extract(YEAR FROM date_submit) = :annee ');
+    $sth->bindParam(':id_user', $idUser);
+    $sth->bindParam(':id_photo', $idPhoto);
+    $sth->bindParam(':mois', $mois);
+    $sth->bindParam(':annee', $annee);
+    $sth->execute();
+    $res = $sth->fetchAll();
+ 
+ if (count($res) == 0){
+    $bool = true;
+ }
+    return $bool;
+
 }
 
 function vote($idUser, $idPhoto, $conn)
@@ -104,8 +129,7 @@ function insertUser($userId,$conn)
 function getPhotoByDate($datePeriode,$nb,$conn){
 
  $list = [];
-$mois = date("m", strtotime($datePeriode));
-$annee = date("Y", strtotime($datePeriode));
+
 
 var_dump($mois);
 var_dump($annee);
@@ -118,7 +142,6 @@ var_dump($annee);
     while ($donnees = $sth->fetch())
       {
             $list[] = $donnees;
-            var_dump($list);
       }
 
     return $list;
