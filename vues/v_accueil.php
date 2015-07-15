@@ -46,8 +46,9 @@
 					</div>
 
 			<div class="clearfix"> </div>
-
-		<div class="col-xs-14 col-sm-3"> <div class="well">
+<?php foreach ($listRecentPhotos as $key => $value) { ?>
+<?php echo $value['url_photos'];?>
+<div class="col-xs-14 col-sm-3"> <div class="well">
             		<h4><a href="#" target="_blank">Bootstrap</a></h4>
                 <img class="thumbnail img-responsive img-responsive zoom-img" src="//lorempixel.com/150/180"/>
                 <div class="info"> <span class="badge">90</span>
@@ -55,6 +56,10 @@
  				</div>
                 </div>
            </div>
+
+
+<?php }?>
+		
 
 
 		<div class="col-xs-14 col-sm-3"> <img src="web/images/chat.png"/></div>
