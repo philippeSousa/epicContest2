@@ -110,9 +110,10 @@ $annee = date("Y", strtotime($datePeriode));
 var_dump($mois);
 var_dump($annee);
 
-     $sth = $conn->prepare('SELECT id_photo,id_user,nb_like,url_photo,url_miniature,date_submit,active FROM photos 
-        where extract(MOUNTH FROM date_submit) = :mois and extract(YEAR FROM date_submit) = :annee
-     ORDER BY date_submit');
+     $sth = $conn->prepare('SELECT id_photo,id_user,nb_like,url_photo,url_miniature,date_submit,active 
+        FROM photos where extract(month FROM date_submit) = :mois 
+        and extract(YEAR FROM date_submit) = :annee ORDER BY date_submit
+');
     $sth->execute([':annee' => $annee , ':mois' =>$mois ]);
     while ($donnees = $sth->fetch())
       {
