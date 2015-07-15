@@ -46,11 +46,18 @@
 					</div>
 
 			<div class="clearfix"> </div>
-<?php foreach ($listRecentPhotos as $key => $value) { ?>
-<?php echo $value;
 
 
-var_dump($value);?>
+<?php 
+
+for ($i=0; $i < 20 ; $i++) { 
+
+	echo $listRecentPhotos[$i]['url_photo'];
+ } 
+
+ foreach ($listRecentPhotos as $key => $value) { ?>
+<?php echo $value[$key]['url_photo'];
+?>
 <div class="col-xs-14 col-sm-3"> <div class="well">
             		<h4><a href="#" target="_blank">Bootstrap</a></h4>
                 <img class="thumbnail img-responsive img-responsive zoom-img" src="//lorempixel.com/150/180"/>
