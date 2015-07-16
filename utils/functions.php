@@ -126,7 +126,7 @@ function insertUser($userId,$conn)
 }
 //recupere list de photo grace a une periode donnée et un quantité de photo voulu
 
-function getPhotoByDate($datePeriode,$nb,$conn){
+function getPhotosByDate($datePeriode,$nb,$conn){
 
  $list = [];
 
@@ -146,4 +146,21 @@ $annee = date("Y", strtotime($datePeriode));
     return $list;
 
 }
+
+function getPhotoByIdAndDate($idPhoto,$idUser,$date,$conn){
+
+$mois = date("m", strtotime($date));
+$annee = date("Y", strtotime($date));
+
+     $sth = $conn->prepare('SELECT id,id_photo,id_user,nb_like,url_photo,date_submit,active 
+        FROM photos where extract(month FROM date_submit) = :mois 
+        and extract(YEAR FROM date_submit) = :annee and id_photo = :id_photo and id_user = :id_user ORDER BY date_submit');
+     $sth->bindParam(':mois',$mois);
+     $sth->bindParam(':annee',$annee);
+     $sth->bindParam(':id_photo',$idPhoto);
+     $sth->bindParam(':idUser',$idUser);
+     $sth->execute();
+     $list = $sth->fetch())
+        return $list;
+}   
 

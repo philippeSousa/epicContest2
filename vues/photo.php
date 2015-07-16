@@ -1,43 +1,4 @@
 <?php 
-	use Facebook\FacebookSession;
-	use Facebook\FacebookRedirectLoginHelper;
-	use Facebook\FacebookRequest;
-	use Facebook\FacebookResponse;
-	use Facebook\FacebookSDKException;
-	use Facebook\FacebookRequestException;
-	use Facebook\FacebookAuthorizationException;
-	use Facebook\GraphObject;
-	use Facebook\Entities\AccessToken;
-	use Facebook\HttpClients\FacebookCurlHttpClient;
-	use Facebook\HttpClients\FacebookHttpable;
-
-	
-	if ( isset($session) ) 
-	{		 
-		/* Init la connection et get le USER */
-		$token = (string) $session->getAccessToken();
-		//Prepare
-		$request = new FacebookRequest($session, 'GET', '/me');
-		//execute
-		$response = $request->execute();
-		//transform la data graphObject
-		$user = $response->getGraphObject("Facebook\GraphUser");
-/*		var_dump($user);
-*/		/* Get les photos de l'album */	
-		/* envoie une requete fcb qui va chercher toutes les photo de l'albumId selectionné */
-		$requestPhoto = new FacebookRequest(
-		  $session,
-		  'GET',
-		  '/'.$idPhoto
-		);
-		$responsePhoto = $requestPhoto->execute();
-		$photo = json_decode($responsePhoto->getRawResponse(), true);
-		var_dump($photo);
-	} else {
-		/* S'il est pas connecté, il a pas accès à la page d'upload, on le redirige vers l'accueil */
-        header('Location: index.php');		
-	}
-
 
 
 
