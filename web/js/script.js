@@ -37,12 +37,12 @@ $('#ModalUpload').on('shown.bs.modal', function () {
 
 document.querySelector("html").classList.add('js');
 
-   
+
 // initialisation des variables
 var fileInput  = document.querySelector( ".input-file" ),  
     button     = document.querySelector( ".input-file-trigger" ),
     the_return = document.querySelector(".file-return");
- 
+ console.log(fileInput);
 // action lorsque la "barre d'espace" ou "Entrée" est pressée
 button.addEventListener( "keydown", function( event ) {
     if ( event.keyCode == 13 || event.keyCode == 32 ) {

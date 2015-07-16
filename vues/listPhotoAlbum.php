@@ -70,10 +70,7 @@
 
     <h1> <?php echo "Bonjour ".$user->getName(); ?> Choisissez une photo pour concourrir ! </h1>
     <a href="selectAlbum.php"> Retour aux albums </a><br/>
-    <form method="post" action="fileUpload.php"> 
-    	<input type="hidden" name="albumId" value="<?php echo $albumId; ?>" />
-    	<input type="submit" value="Ajouter une nouvelle photo à cet album !" />
-    </form>
+   
 
     <div class="col-sm-14">
 	<div id="posts" class="row">
