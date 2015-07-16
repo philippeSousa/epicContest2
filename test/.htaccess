@@ -1,0 +1,4 @@
+Options +FollowSymlinks 
+RewriteEngine on 
+
+RewriteRule ^inconnu.html$ /test/test.html [L]
