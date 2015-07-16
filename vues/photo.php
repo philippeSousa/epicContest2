@@ -12,13 +12,6 @@
 			<div class="product">		
 
 
-
-<div class="container">
-			<div class="services">
-				<h3>Vos albums facebook</h3>
-			</div>
-			<div class="product">	
-
 <div class="row">
 
 	<div class="col-sm-9 ">
