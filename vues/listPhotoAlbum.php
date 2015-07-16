@@ -132,11 +132,11 @@
 
 	?>
 
-		<div id="item" class="post item span2 plus">	
+<!-- 		<div id="item" class="post item span2 plus">	
 
 		 <i style="font-size:120px;" class="glyphicon glyphicon-plus thumbnail"></i>
 
-		</div>
+		</div> -->
 
 		 <?php
 // affiche les images de l'album
@@ -144,7 +144,11 @@
     	{ ?>
 
   <div id="item" class="post item span2">
-		
+		<form method="post" action="index.php?uc=validatePhoto">
+		 						 <input type="hidden" name="photoId" value="<?php echo $cettePhoto['id'] ?>" />
+								 <input type="hidden" name="albumId" value=" <?php echo $albumId ?>" />
+		 						 <input  type="image" src="<?php echo $cettePhoto['picture'] ?>" class="thumbnail" />
+		</form>
   </div>
   
     	<?php }
@@ -156,13 +160,7 @@
 
    </div>
    </div>
-<form method="post" action="index.php?uc=validatePhoto">
 
-		 		<input type="hidden" name="photoId" value="<?php echo $cettePhoto['id'] ?>" />
-				<input type="hidden" name="albumId" value=" <?php echo $albumId ?>" />
-		 		<input  type="image" src="<?php echo $cettePhoto['picture'] ?>" class="thumbnail" />
-
-		</form>
     <script>
 
         window.fbAsyncInit = function () {
