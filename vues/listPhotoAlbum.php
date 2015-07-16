@@ -118,8 +118,8 @@
 
 			<div id="item" class="post item span2 plus">	
 				<div class="input-file-container thumbnail">
-				  <input class="input-file" id="my-file" type="file">
-
+<!-- 				  <input class="input-file" id="my-file" type="file">
+ -->
 				  <form method="post" enctype="multipart/form-data" >
 								<input type="hidden" name="albumId" value="0" />
 								<div class="upload">
@@ -184,28 +184,5 @@
           js.src = "//connect.facebook.net/fr_FR/sdk.js";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-
-// initialisation des variables
-var fileInput  = document.querySelector( ".input-file" ),  
-    button     = document.querySelector( ".input-file-trigger" ),
-    the_return = document.querySelector(".file-return");
- 
-// action lorsque la "barre d'espace" ou "Entrée" est pressée
-button.addEventListener( "keydown", function( event ) {
-    if ( event.keyCode == 13 || event.keyCode == 32 ) {
-        fileInput.focus();
-    }
-});
-
-// action lorsque le label est cliqué
-button.addEventListener( "click", function( event ) {
-   fileInput.focus();
-   return false;
-});
- 
-// affiche un retour visuel dès que input:file change
-fileInput.addEventListener( "change", function( event ) {  
-    the_return.innerHTML = this.value;  
-});
 
     </script>
