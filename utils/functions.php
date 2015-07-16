@@ -92,13 +92,14 @@ function getUser($userId, $conn)
     return $sth->execute();
 }
 
-function getPhotoByUser($userId, $conn)
+function insertUser($userId,$conn)
 {
-    $sth = $conn->prepare('SELECT * FROM photo where user_id = :id');
-    $sth->bindParam(':id', $userId);
+    $date = date('Ymd');
+    $sth = $conn->prepare('INSERT INTO users (id_user_fb, date_submit) VALUES(:id_user_fb, :date_submit)');
+    $sth->bindParam(':id_user_fb', $userId);
+    $sth->bindParam(':date_submit', $date);
     return $sth->execute();
 }
-
 function verifUser($userId,$conn)
 {
 $bool = false;
@@ -116,16 +117,15 @@ $bool = false;
     return $bool;
 }
 
-function insertUser($userId,$conn)
+
+function getPhotoByUser($userId, $conn)
 {
-    $date = date('Ymd');
-    $sth = $conn->prepare('INSERT INTO users (id_user_fb, date_submit) VALUES(:id_user_fb, :date_submit)');
-    $sth->bindParam(':id_user_fb', $userId);
-    $sth->bindParam(':date_submit', $date);
+    $sth = $conn->prepare('SELECT * FROM photos where user_id = :id');
+    $sth->bindParam(':id', $userId);
     return $sth->execute();
 }
-//recupere list de photo grace a une periode donnée et un quantité de photo voulu
 
+//recupere list de photo grace a une periode donnée et un quantité de photo voulu
 function getPhotosByDate($datePeriode,$nb,$conn){
 
  $list = [];
@@ -164,3 +164,12 @@ $annee = date("Y", strtotime($date));
         return $list;
 }   
 
+function getCountLikeFacebook($page)
+{
+    $url = "https://api.facebook.com/method/links.getStats?urls=".urlencode($page)."&format=json";
+    $data = json_decode(file_get_contents($url));
+ 
+    if(!isset($data[0]->like_count)){ return 'erreur'; }
+ 
+    return $data[0]->like_count;
+}

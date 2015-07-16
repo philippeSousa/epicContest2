@@ -1,5 +1,5 @@
 Options +FollowSymLinks  
 RewriteEngine On 
 
-RewriteRule ^/([0-9]+)/([0-9]+)/(.*)$ index.php?uc=photo&iduser=$1&idphoto=$2&date=$3 [L,NC]
+RewriteRule /([0-9]+)/([0-9]+)/(.*)$ index.php?uc=photo&iduser=$1&idphoto=$2&date=$3 [L,NC]
 
