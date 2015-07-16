@@ -158,7 +158,7 @@ $annee = date("Y", strtotime($date));
      $sth->bindParam(':mois',$mois);
      $sth->bindParam(':annee',$annee);
      $sth->bindParam(':id_photo',$idPhoto);
-     $sth->bindParam(':idUser',$idUser);
+     $sth->bindParam(':id_user',$idUser);
      $sth->execute();
      $list = $sth->fetch();
         return $list;
