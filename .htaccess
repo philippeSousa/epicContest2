@@ -1,5 +1,4 @@
 Options +FollowSymLinks  
 RewriteEngine On 
 
-RewriteRule /([0-9]+)/([0-9]+)/(.*)$ index.php?uc=photo&iduser=$1&idphoto=$2&date=$3 [L,NC]
-
+RewriteRule index.php?uc=photo&iduser=([0-9]+)&idphoto=([0-9]+)&date=(.*)$ /$1/$2/$3 [L,NC]
