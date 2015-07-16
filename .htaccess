@@ -1,7 +1,5 @@
-
-
-<IfModule mod_rewrite.c>
+Options +FollowSymLinks  
 RewriteEngine On 
 
-RewriteRule ^photo/([0-9]+)/([0-9]+)/(.*)$ ./account/index.php?uc=photo&iduser=$1&idphoto=$2&date=$3 [L,NC]
-</IfModule>
+RewriteRule ^photo/([0-9]+)/([0-9]+)/(.*)$ ^index.php?uc=photo&iduser=$1&idphoto=$2&date=$3 [L,NC]
+rewriteRule 
