@@ -23,21 +23,18 @@
 
 	<div class="col-sm-9 ">
 	<div class="row lastImg">
-	<div class="img-title">
-						<h4>DERNIER AJOUT</h4>
-					</div>
 
 			<div class="clearfix"> </div>
 
 
-		 <img src="//lorempixel.com/150/180"/>
+		 <img src="<?php echo $laphoto['url_photo']; ?>"/>
 	
 
 	</div>
 	<div style="margin-top:15px;" class="row lastImg">
 		
-
-		qsdddddddddddddddddddddd
+<div class="fb-like" data-href="https://appesgifacebook.herokuapp.com/index.php?uc=photo&iduser=<?php echo $laphoto['id_user']?>&idphoto=<?php echo $laphoto['id_photo'] ?>&date=<?php echo $laphoto['date_submit']?>" data-send="true" 
+                data-layout="box_count" data-width="100" data-show-faces="true" data-font="arial"></div>
 	</div>
 	<div style="margin-top:15px;" class="row lastImg">
 		
