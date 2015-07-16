@@ -160,7 +160,7 @@ $annee = date("Y", strtotime($date));
      $sth->bindParam(':id_photo',$idPhoto);
      $sth->bindParam(':idUser',$idUser);
      $sth->execute();
-     $list = $sth->fetch())
+     $list = $sth->fetch();
         return $list;
 }   
 
