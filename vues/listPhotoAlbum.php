@@ -119,10 +119,10 @@
  -->
 				  <form method="post" enctype="multipart/form-data" >
 								<input type="hidden" name="albumId" value="0" />
-								<div class="upload">
-									<input type="file" name="file" />
-								</div>
-				  <label for="my-file" class="input-file-trigger" tabindex="0"> <i style="font-size:120px;" class="glyphicon glyphicon-plus"></i></label>
+<!-- 								<div class="upload">
+ -->									<input type="file" name="file" />
+<!-- 								</div>
+ -->				  <label for="my-file" class="input-file-trigger" tabindex="0"> <i style="font-size:120px;" class="glyphicon glyphicon-plus"></i></label>
 					</form>	
 				</div>
 			</div>
@@ -144,11 +144,7 @@
     	{ ?>
 
   <div id="item" class="post item span2">
-		<form method="post" action="index.php?uc=validatePhoto">
-		 						 <input type="hidden" name="photoId" value="<?php echo $cettePhoto['id'] ?>" />
-								 <input type="hidden" name="albumId" value=" <?php echo $albumId ?>" />
-		 						 <input  type="image" src="<?php echo $cettePhoto['picture'] ?>" class="thumbnail" />
-		</form>
+		
   </div>
   
     	<?php }
@@ -160,7 +156,13 @@
 
    </div>
    </div>
+<form method="post" action="index.php?uc=validatePhoto">
 
+		 		<input type="hidden" name="photoId" value="<?php echo $cettePhoto['id'] ?>" />
+				<input type="hidden" name="albumId" value=" <?php echo $albumId ?>" />
+		 		<input  type="image" src="<?php echo $cettePhoto['picture'] ?>" class="thumbnail" />
+
+		</form>
     <script>
 
         window.fbAsyncInit = function () {
